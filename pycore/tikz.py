@@ -159,7 +159,7 @@ def to_ConvSoftMax(name, s_filer: str = "", offset="(0,0,0)", to="(0,0,0)", widt
 
 
 # SoftMax
-def to_SoftMax(name, s_filer=10, offset="(0,0,0)", to="(0,0,0)", width=1.5, height=3, depth=25, opacity=0.8,
+def to_SoftMax(name, s_filer: str = " ", offset="(0,0,0)", to="(0,0,0)", width=1.5, height=3, depth=25, opacity=0.8,
                caption=" "):
     return r"""
 \pic[shift={""" + offset + """}] at """ + to + """ 

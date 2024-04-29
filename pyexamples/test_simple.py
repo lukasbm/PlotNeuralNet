@@ -13,7 +13,7 @@ arch = [
     to_Conv("conv2", offset="(1,0,0)", to="(pool1-east)", height=32, depth=32, width=2),
     to_connection("pool1", "conv2"),
     to_Pool("pool2", offset="(0,0,0)", to="(conv2-east)", height=28, depth=28, width=1),
-    to_SoftMax("soft1", 10, "(3,0,0)", "(pool1-east)", caption="SOFT"),
+    to_SoftMax("soft1", offset="(3,0,0)", to="(pool1-east)"),
     to_connection("pool2", "soft1"),
     to_Sum("sum1", offset="(1.5,0,0)", to="(soft1-east)", radius=2.5, opacity=0.6),
     to_connection("soft1", "sum1"),
