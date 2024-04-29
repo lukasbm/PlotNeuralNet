@@ -22,61 +22,61 @@
         \tikzstyle{copyconnection}=[ultra thick,every node/.style={sloped,allow upside down},draw={rgb:blue,4;red,1;green,1;black,3},opacity=0.7]
 
 
-        \pic[shift={(0,0,0)}] at (0,0,0)
-            {Box={
-            name=conv0,
-            caption= ,
-            xlabel={{3, }},
-            zlabel=224,
-            fill=\ConvColor,
-            height=44.8,
-            width=3,
-            depth=44.8
-        }
+        \pic[shift={(0,0,0)}] at (0,0,0) {
+            Box={
+                name=conv0,
+                caption= ,
+                xlabel={{3, }},
+                zlabel=224,
+                fill=\ConvColor,
+                height=44.8,
+                width=3,
+                depth=44.8
+            }
         };
 
 
-        \pic[shift={(1,0,0)}] at (conv0-east)
-            {Box={
-            name=conv1,
-            caption= ,
-            xlabel={{96, }},
-            zlabel=55,
-            fill=\ConvColor,
-            height=11.0,
-            width=4.8,
-            depth=11.0
-        }
+        \pic[shift={(1,0,0)}] at (conv0-east) {
+            Box={
+                name=conv1,
+                caption= ,
+                xlabel={{96, }},
+                zlabel=55,
+                fill=\ConvColor,
+                height=11.0,
+                width=4.8,
+                depth=11.0
+            }
         };
 
 
         \draw [connection]  (conv0-east)    -- node {\midarrow} (conv1-west);
 
 
-        \pic[shift={ (0,0,0) }] at (conv1-east)
-            {Box={
-            name=pool1,
-            caption= ,
-            fill=\PoolColor,
-            opacity=0.5,
-            height=5.4,
-            width=1,
-            depth=5.4
-        }
+        \pic[shift={ (0,0,0) }] at (conv1-east) {
+            Box={
+                name=pool1,
+                caption= ,
+                fill=\PoolColor,
+                opacity=0.5,
+                height=5.4,
+                width=1,
+                depth=5.4
+            }
         };
 
 
-        \pic[shift={(1,0,0)}] at (pool1-east)
-            {Box={
-            name=conv2,
-            caption= ,
-            xlabel={{256, }},
-            zlabel=27,
-            fill=\ConvColor,
-            height=5.4,
-            width=12.8,
-            depth=5.4
-        }
+        \pic[shift={(1,0,0)}] at (pool1-east)            {
+            Box={
+                name=conv2,
+                caption= ,
+                xlabel={{256, }},
+                zlabel=27,
+                fill=\ConvColor,
+                height=5.4,
+                width=12.8,
+                depth=5.4
+            }
         };
 
 

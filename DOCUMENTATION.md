@@ -39,4 +39,19 @@ Available:
 
 ## Latex
 
-TODO
+Colors:
+
+- Conv
+- ConvRelu
+- Pool
+- UnPool
+- Fc
+- FcRelu
+- Softmax
+
+Shapes:
+
+- Ball (for elementwise or reduction operations)
+- Block (simple cube with custom colors. Used for conv, fc, etc.)
+- RightBandedBox (simple cube with colored stripe on the right. Used for layer + activation function)
+- 
