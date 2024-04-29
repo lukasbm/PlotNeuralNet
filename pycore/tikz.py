@@ -1,4 +1,5 @@
 import os
+from typing import Tuple
 
 
 def to_head(projectpath):
@@ -46,14 +47,16 @@ def to_input(pathfile, to='(-3,0,0)', width=8, height=8, name="temp"):
 
 
 # Conv
-def to_Conv(name, s_filer=256, n_filer=64, offset="(0,0,0)", to="(0,0,0)", width=1, height=40, depth=40, caption=" "):
+# TODO: turn filer into Optional[int]
+def to_Conv(name, s_filer: str = "", n_filer: str = "", offset="(0,0,0)",
+            to="(0,0,0)", width=1, height=40, depth=40, caption=" "):
     return r"""
 \pic[shift={""" + offset + """}] at """ + to + """ 
     {Box={
         name=""" + name + """,
         caption=""" + caption + r""",
-        xlabel={{""" + str(n_filer) + """, }},
-        zlabel=""" + str(s_filer) + """,
+        xlabel={{""" + n_filer + """, }},
+        zlabel=""" + s_filer + """,
         fill=\ConvColor,
         height=""" + str(height) + """,
         width=""" + str(width) + """,
@@ -65,8 +68,8 @@ def to_Conv(name, s_filer=256, n_filer=64, offset="(0,0,0)", to="(0,0,0)", width
 
 # Conv,Conv,relu
 # Bottleneck
-def to_ConvConvRelu(name, s_filer=256, n_filer=(64, 64), offset="(0,0,0)", to="(0,0,0)", width=(2, 2), height=40,
-                    depth=40, caption=" "):
+def to_ConvConvRelu(name, s_filer: str = "", n_filer: Tuple[str, str] = ("", ""), offset="(0,0,0)", to="(0,0,0)",
+                    width=(2, 2), height=40, depth=40, caption=" "):
     return r"""
 \pic[shift={ """ + offset + """ }] at """ + to + """ 
     {RightBandedBox={
@@ -118,8 +121,8 @@ def to_UnPool(name, offset="(0,0,0)", to="(0,0,0)", width=1, height=32, depth=32
 """
 
 
-def to_ConvRes(name, s_filer=256, n_filer=64, offset="(0,0,0)", to="(0,0,0)", width=6, height=40, depth=40, opacity=0.2,
-               caption=" "):
+def to_ConvRes(name, s_filer: str = "", n_filer: str = "", offset="(0,0,0)", to="(0,0,0)", width=6, height=40, depth=40,
+               opacity=0.2, caption=" "):
     return r"""
 \pic[shift={ """ + offset + """ }] at """ + to + """ 
     {RightBandedBox={
@@ -139,7 +142,7 @@ def to_ConvRes(name, s_filer=256, n_filer=64, offset="(0,0,0)", to="(0,0,0)", wi
 
 
 # ConvSoftMax
-def to_ConvSoftMax(name, s_filer=40, offset="(0,0,0)", to="(0,0,0)", width=1, height=40, depth=40, caption=" "):
+def to_ConvSoftMax(name, s_filer: str = "", offset="(0,0,0)", to="(0,0,0)", width=1, height=40, depth=40, caption=" "):
     return r"""
 \pic[shift={""" + offset + """}] at """ + to + """ 
     {Box={
