@@ -4,7 +4,7 @@
 %Elementwise or reduction operations can be drawn with this
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\tikzset{Ball/.pic={\tikzset{/sphere/.cd,#1}	 	
+\tikzset{Ball/.pic={\tikzset{/sphere/.cd,#1}
 
 \pgfmathsetmacro{\r}{\radius*\scale}
 
@@ -17,24 +17,24 @@
 \coordinate (\name-north)  at ( 0 , \r , 0) ;
 \coordinate (\name-south)  at ( 0 , -\r, 0) ;
 
-\path (\name-south) + (0,-20pt) coordinate (caption-node) 
+\path (\name-south) + (0,-20pt) coordinate (caption-node)
 edge ["\textcolor{black}{\bf \caption}"'] (caption-node); %Ball caption
 
 },
-/sphere/.search also={/tikz},
-/sphere/.cd,
-radius/.store       in=\radius,
-scale/.store        in=\scale,
-caption/.store      in=\caption,
-name/.store         in=\name,
-fill/.store         in=\fill,
-logo/.store         in=\logo,
-opacity/.store      in=\opacity,
-logo=$\Sigma$,
-fill=green,
-opacity=0.10,
-scale=0.2,
-radius=0.5,
-caption=,
-name=,
+    /sphere/.search also={/tikz},
+    /sphere/.cd,
+    radius/.store in=\radius,
+    scale/.store in=\scale,
+    caption/.store in=\caption,
+    name/.store in=\name,
+    fill/.store in=\fill,
+    logo/.store in=\logo,
+    opacity/.store in=\opacity,
+    logo=$\Sigma$,
+    fill=green,
+    opacity=0.10,
+    scale=0.2,
+    radius=0.5,
+    caption=,
+    name=,
 }
