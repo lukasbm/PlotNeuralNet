@@ -3,6 +3,7 @@
 *.gz
 
 __pycache__
+*.pyc
 books
 project
 
