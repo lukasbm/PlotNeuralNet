@@ -39,6 +39,8 @@ Available:
 
 ## Latex
 
+<https://github.com/carhartt21/PlotNeuralNet> has added some more latex layers and examples.
+
 Colors:
 
 - Conv
@@ -54,4 +56,11 @@ Shapes:
 - Ball (for elementwise or reduction operations)
 - Block (simple cube with custom colors. Used for conv, fc, etc.)
 - RightBandedBox (simple cube with colored stripe on the right. Used for layer + activation function)
-- 
+
+## Export as SVG
+
+Just run the stuff above then convert pdf to svg.
+
+```bash
+inkscape --without-gui --file=input.pdf --export-plain-svg=output.svg
+```

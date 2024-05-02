@@ -178,7 +178,7 @@ def to_SoftMax(name, s_filer: str = " ", offset="(0,0,0)", to="(0,0,0)", width=1
 """
 
 
-def to_Sum(name, offset="(0,0,0)", to="(0,0,0)", radius=2.5, opacity=0.6):
+def to_Sum(name, offset="(0,0,0)", to="(0,0,0)", radius=2.5, opacity=0.6, logo: str = "+"):
     return r"""
 \pic[shift={""" + offset + """}] at """ + to + """ 
     {Ball={
@@ -186,7 +186,7 @@ def to_Sum(name, offset="(0,0,0)", to="(0,0,0)", radius=2.5, opacity=0.6):
         fill=\SumColor,
         opacity=""" + str(opacity) + """,
         radius=""" + str(radius) + """,
-        logo=$+$
+        logo=$""" + str(logo) + """$
         }
     };
 """
