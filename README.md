@@ -56,6 +56,7 @@ Following are some network representations:
 - [ ] Add easy legend functionality
 - [ ] Add more layer shapes like TruncatedPyramid, 2DSheet etc
 - [ ] Add examples for RNN and likes.
+- [ ] Use python-pylatex https://src.fedoraproject.org/rpms/python-pylatex
 
 ## Latex usage
 
